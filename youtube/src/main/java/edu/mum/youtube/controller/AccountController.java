@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.mum.youtube.model.UserAccount;
 import edu.mum.youtube.services.UserService;
 
-
- 
-
 //import org.springframework.web.bind.annotation.RestController;
 
 @Controller 
-public class ControllerClass {
+public class AccountController {
 	
 	@Autowired
 	private UserService userService;

@@ -1,5 +1,7 @@
 package edu.mum.youtube.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,43 +11,43 @@ import javax.persistence.Table;
 //import java.util.List;
 
 @Entity
-@Table(name="mytable")
+@Table(name = "mytable")
 public class UserAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int account_id;
-	
+
 	private String userName;
 	private String password;
 	private String email;
-	/*
-	 * private String photo;
-	 * 
-	 * List<PlayList> listPlayList; List<Channel> listChannel; List<Subscription>
-	 * listSubscription; List<Comment> listComment ;
-	 */
+
+	 
+	 private String photo;
+//	 
+// 	  List<PlayList> listPlayList; 
+//	  List<Channel> listChannel; 
+//	  List<Subscription> listSubscription; 
+//	  List<Comment> listComment ;
+	  
 	public UserAccount() {
-		
+
 	}
-	
-	
-	public UserAccount(  String userName, String password, String email) {
+
+	public UserAccount(String userName, String password, String email) {
 		super();
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		//this.accountId =accountId;
+		// this.accountId =accountId;
 	}
 
-	public UserAccount( int id, String userName, String password, String email) {
+	public UserAccount(int id, String userName, String password, String email) {
 		super();
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
-		this.account_id =id;
+		this.account_id = id;
 	}
-
-	
 
 	public String getUserName() {
 		return userName;

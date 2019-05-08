@@ -21,7 +21,6 @@ public class RestControllerClass {
 	
 	@GetMapping("save-user")
 	public String saveUser( @RequestParam String username,@RequestParam String  password, @RequestParam String email) {
-		
 		UserAccount user = new UserAccount( username, password, email);
 		userService.saveMyUser(user);
 		return "User saved";
