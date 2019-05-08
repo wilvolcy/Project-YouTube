@@ -43,9 +43,9 @@ public class UserAccount {
 //	@JsonManagedReference()
 //	List<Subscription> subscriptions;
 	
-	@OneToMany(mappedBy = "user_account",cascade = CascadeType.REMOVE,orphanRemoval = true)
-	@JsonManagedReference()
-	List<Comment> comments;
+//	@OneToMany(mappedBy = "user_account",cascade = CascadeType.REMOVE,orphanRemoval = true)
+//	@JsonManagedReference()
+//	List<String> comments;
 
 	public UserAccount() {
 
@@ -55,7 +55,7 @@ public class UserAccount {
 	
 
 	public UserAccount(String userName, String password, String email, String profileImageUrl, List<PlayList> playLists,
-			List<Channel> channel, List<Subscription> subscriptions, List<CommentTest> comments) {
+			List<Channel> channel, List<Subscription> subscriptions, List<Comment> comments) {
 		super();
 		this.userName = userName;
 		this.password = password;
