@@ -1,13 +1,18 @@
 package edu.mum.youtube.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 //import java.util.List;
 
 @Entity
+@Table(name="mytable")
 public class UserAccount {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer accountId;
 	
 	private String userName;
@@ -25,7 +30,10 @@ public class UserAccount {
 		this.userName = userName;
 		this.password = password;
 		this.email = email;
+		//this.accountId =accountId;
 	}
+
+	
 
 	public String getUserName() {
 		return userName;
