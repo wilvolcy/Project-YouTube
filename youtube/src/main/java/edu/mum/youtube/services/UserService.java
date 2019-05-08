@@ -11,13 +11,14 @@ import edu.mum.youtube.repository.UserRepository;
 public class UserService {
 	@Autowired 
 	private final UserRepository userRepository;
+	
 	public UserService(UserRepository userRepository ) {
 		this.userRepository = userRepository;
 	}
-	
 
 	
 	public void saveMyUser(UserAccount user) {
+		
 		userRepository.save(user);
 	}
 }
