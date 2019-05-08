@@ -1,5 +1,7 @@
 package edu.mum.youtube.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +21,7 @@ public class UserAccount {
 	private String userName;
 	private String password;
 	private String email;
+	private List<String> test;
 	@Transient
 	private String temp;
 	/*
