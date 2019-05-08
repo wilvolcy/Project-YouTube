@@ -19,11 +19,11 @@
 <body>
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/welcome" class="navbar-brand">YouTube</a>
+			<a href="/home" class="navbar-brand">YouTube</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/login">Login</a></li>
-					<li><a href="/register">New Registration</a></li>
+					<li><a href="/register">Create User</a></li>
 					<li><a href="/show-users">All Users</a></li>
 				</ul>
 			</div>
@@ -43,10 +43,11 @@
 
 		<c:when test="${mode=='MODE_REGISTER' }">
 			<div class="container text-center">
-				<h3>New Registration</h3>
+				<h3>Create a User </h3>
 				<hr>
 				<form class="form-horizontal" method="POST" action="save-user">
-					<input type="hidden" name="id" value="${user.id }" />
+					<!--  <input type="hidden" name="id" value="${user.id }" /> -->
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Username</label>
 						<div class="col-md-7">
@@ -58,21 +59,29 @@
 						<label class="control-label col-md-3">First Name</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="firstname"
-								value="${user.firstname }" />
+								  />
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Last Name</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="lastname"
-								value="${user.lastname }" />
+								  />
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">E mail</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="email"
+								value="${user.email }" />
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Age </label>
 						<div class="col-md-3">
 							<input type="text" class="form-control" name="age"
-								value="${user.age }" />
+								    />
 						</div>
 					</div>
 					<div class="form-group">
