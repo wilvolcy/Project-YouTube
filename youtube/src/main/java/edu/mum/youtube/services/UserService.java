@@ -32,11 +32,8 @@ public class UserService {
 		listUser = (List<UserAccount>) userRepository.findAll();
 
 		for (UserAccount user : listUser) {
-			
-			users.add(user);
-			
-
-		}
+		 users.add(user);
+	 }
 
 		return users;
 	}
