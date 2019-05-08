@@ -1,4 +1,4 @@
-package edu.mum.youtube.RestController;
+package edu.mum.youtube.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
