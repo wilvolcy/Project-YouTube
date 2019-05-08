@@ -32,12 +32,12 @@ public class UserService {
 		listUser = (List<UserAccount>) userRepository.findAll();
 
 		for (UserAccount user : listUser) {
-			user.getEmail();
+			
 			users.add(user);
-			System.out.println("Tes :" + user);
+			
 
 		}
 
-		return listUser;
+		return users;
 	}
 }
