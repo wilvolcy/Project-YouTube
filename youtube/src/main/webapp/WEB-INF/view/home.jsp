@@ -46,7 +46,10 @@
 				<h3>Create a User </h3>
 				<hr>
 				<form class="form-horizontal" method="POST" action="save-user">
-					<!--  <input type="hidden" name="id" value="${user.id }" /> -->
+					  <input type="hidden" name="id" value="${user.id }" /> 
+					
+					 
+					
 					
 					<div class="form-group">
 						<label class="control-label col-md-3">Username</label>
@@ -96,6 +99,8 @@
 					</div>
 				</form>
 			</div>
+			
+			
 		</c:when>
 		<c:when test="${mode=='ALL_USERS' }">
 			<div class="container text-center" id="tasksDiv">
@@ -107,6 +112,7 @@
 							<tr>
 								<th>Id</th>
 								<th>UserName</th>
+								<th>Password</th>
 								<th>First Name</th>
 								<th>LastName</th>
 								<th>Age</th>
@@ -115,19 +121,18 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="user" items="${users }">
+						<c:forEach var="user" items="${users }">
 								<tr>
-									<td>${user.id}</td>
-									<td>${user.username}</td>
-									<td>${user.firstname}</td>
-									<td>${user.lastname}</td>
-									<td>${user.age}</td>
-									<td><a href="/delete-user?id=${user.id }"><span
-											class="glyphicon glyphicon-trash"></span></a></td>
-									<td><a href="/edit-user?id=${user.id }"><span
-											class="glyphicon glyphicon-pencil"></span></a></td>
+									<td>  </td>
+									<td>${user.userName}</td>
+									<td>${user.password}</td>
+									
+									
+									
 								</tr>
 							</c:forEach>
+							
+							
 						</tbody>
 					</table>
 				</div>
