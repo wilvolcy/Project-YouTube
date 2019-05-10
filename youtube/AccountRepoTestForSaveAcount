@@ -1,0 +1,50 @@
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.Optional;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+
+@RunWith(SpringRunner.class)
+@DataJpaTest
+
+public class AccountRepositoryTest {
+
+    @Autowired
+    private TestEntityManager entityManager;
+
+    @Autowired
+    private AccountRepository accountRepository;
+    @MockBean
+    private UploadService uploadService;
+    @MockBean
+    private ChannelService channelService;
+
+
+    @Test
+    public void saveAccountTest(){
+        Account account = getAccount();
+        Account savedInDb = entityManager.persist(account);
+        Optional<Account> getFromDb = accountRepository.findById(savedInDb.getId());
+        Account a=getFromDb.get();
+
+        assertThat(a).isEqualTo(savedInDb);
+    }
+
+    
+    private Account getAccount() {
+        Account mockAccount = new Account();
+        mockAccount.setUserName("yared");
+        mockAccount.setEmail("yg@gmail.com");
+        mockAccount.setPassword("password");
+        mockAccount.setSubscriptionList(null);
+        mockAccount.setChannelList(null);
+        return mockAccount;
+    }
+}
